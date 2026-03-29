@@ -1,9 +1,9 @@
-                    <!DOCTYPE html>
+            <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Premium curation of the world's finest free AI tools in 2026. Sophisticated reviews and guidance for discerning users.">
+    <meta name="description" content="Premium curation of the world's finest free AI tools in 2026. Sophisticated reviews for discerning users.">
     <title>AI Tools Hub — Premium AI Intelligence 2026</title>
     <style>
         :root {
@@ -11,7 +11,6 @@
             --card: #141414;
             --text: #f0f0f0;
             --gold: #d4af37;
-            --gold-light: #f0d080;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -22,35 +21,39 @@
             overflow-x: hidden;
         }
 
-        /* Faint Rotating Background */
+        /* Circular Rotating Background */
         .background {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: 
-                radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 70% 60%, rgba(212, 175, 55, 0.06) 0%, transparent 50%);
             z-index: -1;
-            animation: rotateBg 180s linear infinite;
-            opacity: 0.6;
+            background: radial-gradient(circle at center, rgba(212,175,55,0.06) 0%, transparent 70%);
+            overflow: hidden;
         }
-        .background::before {
+        .background::before,
+        .background::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: 
-                linear-gradient(45deg, transparent 48%, rgba(212,175,55,0.03) 50%, transparent 52%),
-                linear-gradient(-45deg, transparent 48%, rgba(212,175,55,0.03) 50%, transparent 52%);
-            background-size: 80px 80px;
-            animation: subtleRotate 120s linear infinite;
+            top: 50%; left: 50%;
+            border: 1px solid rgba(212,175,55,0.12);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotateCircle 140s linear infinite;
+        }
+        .background::before {
+            width: 800px;
+            height: 800px;
+            animation-duration: 160s;
+        }
+        .background::after {
+            width: 1200px;
+            height: 1200px;
+            animation-duration: 220s;
+            animation-direction: reverse;
         }
 
-        @keyframes rotateBg {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        @keyframes subtleRotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        @keyframes rotateCircle {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
         header { 
@@ -60,7 +63,7 @@
             position: sticky; 
             top: 0; 
             z-index: 100; 
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(8px);
         }
         nav { 
             max-width: 1400px; 
@@ -72,18 +75,18 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 2.3rem;
+            gap: 14px;
+            font-size: 2.35rem;
             font-weight: 700;
             color: var(--gold);
-            letter-spacing: -1px;
+            letter-spacing: -1.2px;
         }
         .logo-dot {
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             background: var(--gold);
             border-radius: 50%;
-            box-shadow: 0 0 12px var(--gold);
+            box-shadow: 0 0 15px var(--gold);
         }
         .nav-links a { 
             color: var(--text); 
@@ -91,7 +94,6 @@
             text-decoration: none; 
             font-weight: 500; 
             font-size: 1.05rem;
-            transition: color 0.4s ease;
         }
         .nav-links a:hover { color: var(--gold); }
 
@@ -100,20 +102,19 @@
             text-align: center; 
             max-width: 1100px; 
             margin: 0 auto; 
-            position: relative;
         }
         .hero h1 { 
-            font-size: 4.2rem; 
+            font-size: 4.1rem; 
             line-height: 1.1; 
             margin-bottom: 1.8rem; 
             color: white; 
             font-weight: 600;
         }
         .hero p { 
-            font-size: 1.5rem; 
+            font-size: 1.48rem; 
             max-width: 780px; 
             margin: 0 auto 3.5rem; 
-            opacity: 0.88; 
+            opacity: 0.9; 
         }
         .cta-btn { 
             background: var(--gold); 
@@ -126,11 +127,11 @@
             cursor: pointer; 
             text-decoration: none; 
             display: inline-block; 
-            transition: all 0.5s ease;
+            transition: all 0.4s ease;
         }
         .cta-btn:hover {
-            transform: scale(1.04);
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.45);
         }
 
         .section { 
@@ -140,52 +141,9 @@
         }
         .section-title { 
             text-align: center; 
-            font-size: 2.8rem; 
+            font-size: 2.7rem; 
             margin-bottom: 4rem; 
             color: var(--gold); 
             font-weight: 600;
         }
-        .tools-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(370px, 1fr)); 
-            gap: 2.5rem; 
-        }
-        .tool-card { 
-            background: var(--card); 
-            padding: 2.6rem; 
-            border: 1px solid #333; 
-            transition: border-color 0.6s ease;
-        }
-        .tool-card:hover { border-color: var(--gold); }
-        .tool-card h3 { 
-            color: var(--gold-light); 
-            margin-bottom: 1.1rem; 
-            font-size: 1.6rem; 
-        }
-        .category { 
-            display: inline-block; 
-            background: rgba(212, 175, 55, 0.12); 
-            color: var(--gold); 
-            padding: 8px 20px; 
-            border-radius: 6px; 
-            font-size: 0.98rem; 
-            margin-bottom: 1.5rem; 
-        }
-
-        footer { 
-            background: #050505; 
-            padding: 4.5rem 6% 3rem; 
-            text-align: center; 
-            border-top: 1px solid #222; 
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
-            .nav-links a { margin-left: 1.5rem; font-size: 1rem; }
-        }
-    </style>
-</head>
-<body>
-    <div class="background"></div>
-
-    <header>
+        .tools
