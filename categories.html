@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categories — AI Tools Hub 2026</title>
     <style>
-        /* Reuse same base styles as above */
         :root { --bg: #0a0a0a; --card: #141414; --text: #f0f0f0; --gold: #d4af37; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
@@ -15,17 +14,17 @@
         .background::after { width: 1200px; height: 1200px; animation-duration: 220s; animation-direction: reverse; }
         @keyframes rotateCircle { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
         header { background: rgba(10,10,10,0.95); padding: 2rem 6%; border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); }
-        nav { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        nav { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
         .logo { display: flex; align-items: center; gap: 14px; font-size: 2.35rem; font-weight: 700; color: var(--gold); letter-spacing: -1.2px; text-decoration: none; }
         .logo-dot { width: 12px; height: 12px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 15px var(--gold); }
-        .nav-links a { color: var(--text); margin-left: 2.8rem; text-decoration: none; font-weight: 500; font-size: 1.05rem; transition: color 0.3s ease; }
+        .nav-links a { color: var(--text); margin-left: 2rem; text-decoration: none; font-weight: 500; font-size: 1.05rem; transition: color 0.3s ease; }
         .nav-links a:hover { color: var(--gold); }
         .section { padding: 6rem 6%; max-width: 1400px; margin: 0 auto; }
         .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 4rem; color: var(--gold); font-weight: 600; }
         .categories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
-        .category-card { background: var(--card); padding: 2.5rem 1.5rem; text-align: center; border-radius: 12px; transition: all 0.3s ease; }
-        .category-card:hover { background: #1f1f1f; transform: scale(1.04); }
-        .category-card h3 { color: var(--gold); margin-top: 1rem; }
+        .category-card { background: var(--card); padding: 2.5rem 1.5rem; text-align: center; border-radius: 12px; transition: all 0.4s ease; }
+        .category-card:hover { background: #1f1f1f; transform: translateY(-8px); }
+        .category-card h3 { color: var(--gold); margin: 1rem 0 0.5rem; }
         footer { text-align: center; padding: 3rem 6%; opacity: 0.7; font-size: 0.95rem; }
     </style>
 </head>
@@ -47,9 +46,11 @@
         <h2 class="section-title">Browse by Category</h2>
         <div class="categories-grid">
             <div class="category-card"><h3>Chatbots & Assistants</h3><p>Claude, Gemini, ChatGPT, Grok</p></div>
-            <div class="category-card"><h3>Research & Search</h3><p>Perplexity, NotebookLM</p></div>
-            <div class="category-card"><h3>Presentations</h3><p>Gamma, Beautiful.ai</p></div>
+            <div class="category-card"><h3>Research & Search</h3><p>Perplexity AI, NotebookLM</p></div>
+            <div class="category-card"><h3>Presentations</h3><p>Gamma</p></div>
             <div class="category-card"><h3>Voice & Audio</h3><p>ElevenLabs</p></div>
+            <div class="category-card"><h3>Coding & Development</h3><p>Cursor</p></div>
+            <div class="category-card"><h3>Video Generation</h3><p>HeyGen</p></div>
             <div class="category-card"><h3>Productivity</h3><p>NotebookLM, Notion AI</p></div>
         </div>
     </section>
