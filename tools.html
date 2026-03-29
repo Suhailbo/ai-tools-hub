@@ -3,145 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Complete list of the best free AI tools in 2026 including Grok and DeepSeek with honest reviews.">
-    <title>Tools - AI Tools Hub</title>
+    <title>Tools — AI Tools Hub 2026</title>
     <style>
-        :root {
-            --bg: #0a0a0a;
-            --card: #1a1a1a;
-            --text: #e5e5e5;
-            --gold: #ffd700;
-        }
+        /* Reuse the same :root, *, body, background, header, nav, footer styles as index.html */
+        :root { --bg: #0a0a0a; --card: #141414; --text: #f0f0f0; --gold: #d4af37; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: system-ui, sans-serif; 
-            background: var(--bg); 
-            color: var(--text); 
-            line-height: 1.7; 
-        }
-        header { 
-            background: linear-gradient(135deg, #1a1a1a, #0a0a0a); 
-            padding: 1.8rem 5%; 
-            border-bottom: 3px solid var(--gold); 
-            position: sticky; 
-            top: 0; 
-            z-index: 100; 
-        }
-        nav { 
-            max-width: 1280px; 
-            margin: 0 auto; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-        }
-        .logo { 
-            font-size: 2rem; 
-            font-weight: 800; 
-            color: var(--gold); 
-        }
-        .nav-links a { 
-            color: var(--text); 
-            margin-left: 2.2rem; 
-            text-decoration: none; 
-            font-weight: 500; 
-        }
+        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
+        .background { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at center, rgba(212,175,55,0.06) 0%, transparent 70%); overflow: hidden; pointer-events: none; }
+        .background::before, .background::after { content: ''; position: absolute; top: 50%; left: 50%; border: 1px solid rgba(212,175,55,0.12); border-radius: 50%; transform: translate(-50%, -50%); animation: rotateCircle 140s linear infinite; }
+        .background::before { width: 800px; height: 800px; animation-duration: 160s; }
+        .background::after { width: 1200px; height: 1200px; animation-duration: 220s; animation-direction: reverse; }
+        @keyframes rotateCircle { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+        header { background: rgba(10,10,10,0.95); padding: 2rem 6%; border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); }
+        nav { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 14px; font-size: 2.35rem; font-weight: 700; color: var(--gold); letter-spacing: -1.2px; text-decoration: none; }
+        .logo-dot { width: 12px; height: 12px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 15px var(--gold); }
+        .nav-links a { color: var(--text); margin-left: 2.8rem; text-decoration: none; font-weight: 500; font-size: 1.05rem; transition: color 0.3s ease; }
         .nav-links a:hover { color: var(--gold); }
-        .main { padding: 4rem 5%; max-width: 1280px; margin: 0 auto; }
-        h1 { color: var(--gold); margin-bottom: 2rem; text-align: center; }
-        .tools-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
-            gap: 1.8rem; 
+        .section { padding: 6rem 6%; max-width: 1400px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 4rem; color: var(--gold); font-weight: 600; }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
         }
-        .tool-card { 
-            background: var(--card); 
-            border-radius: 18px; 
-            padding: 2rem; 
-            border: 1px solid #333; 
+        .tool-card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(212,175,55,0.1);
         }
-        .tool-card h3 { color: var(--gold); margin-bottom: 0.8rem; }
-        .category { 
-            background: rgba(255,215,0,0.12); 
-            color: var(--gold); 
-            padding: 6px 16px; 
-            border-radius: 30px; 
-            font-size: 0.85rem; 
-            margin-bottom: 1rem; 
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px rgba(212,175,55,0.25);
+            border-color: var(--gold);
         }
-        footer { 
-            background: #050505; 
-            padding: 3rem 5%; 
-            text-align: center; 
-            margin-top: 4rem; 
+        .tool-category {
+            display: inline-block;
+            background: rgba(212,175,55,0.15);
+            color: var(--gold);
+            font-size: 0.85rem;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 1rem;
         }
-        .back { color: var(--gold); text-decoration: none; font-size: 1.1rem; }
+        .tool-card h3 { color: var(--gold); margin-bottom: 0.8rem; font-size: 1.45rem; }
+        .tool-card p { opacity: 0.85; margin-bottom: 1.5rem; }
+        .tool-link { color: var(--gold); text-decoration: none; font-weight: 600; }
+        .tool-link:hover { text-decoration: underline; }
+        footer { text-align: center; padding: 3rem 6%; opacity: 0.7; font-size: 0.95rem; }
     </style>
 </head>
 <body>
+    <div class="background"></div>
+
     <header>
         <nav>
-            <div class="logo">AI Tools Hub</div>
+            <a href="index.html" class="logo">
+                AI Tools Hub <span class="logo-dot"></span>
+            </a>
             <div class="nav-links">
-                <a href="index.html">Home</a>
                 <a href="tools.html">Tools</a>
-                <a href="guides.html">Guides</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="categories.html">Categories</a>
                 <a href="about.html">About</a>
             </div>
         </nav>
     </header>
 
-    <div class="main">
-        <a href="index.html" class="back">← Back to Home</a>
-        <h1>All Premium AI Tools • 2026</h1>
-        
+    <section class="section">
+        <h2 class="section-title">Curated AI Tools — 2026</h2>
         <div class="tools-grid">
             <div class="tool-card">
-                <div class="category">Reasoning</div>
-                <h3>Claude 3.5 Sonnet</h3>
-                <p>Top choice for deep writing, analysis, and complex tasks.</p>
-                <a href="https://claude.ai" target="_blank" style="color:var(--gold)">Visit →</a>
+                <span class="tool-category">Chatbot</span>
+                <h3>Claude</h3>
+                <p>Best for long-form writing, deep reasoning, and complex automation. Excellent instruction following.</p>
+                <a href="https://claude.ai" target="_blank" class="tool-link">→ Visit Claude</a>
             </div>
             <div class="tool-card">
-                <div class="category">All-Rounder</div>
-                <h3>ChatGPT (GPT-4o)</h3>
-                <p>Powerful for content, research, voice, and image generation.</p>
-                <a href="https://chat.openai.com" target="_blank" style="color:var(--gold)">Visit →</a>
+                <span class="tool-category">Chatbot</span>
+                <h3>Google Gemini</h3>
+                <p>Strong multimodal capabilities with excellent Google ecosystem integration and image analysis.</p>
+                <a href="https://gemini.google.com" target="_blank" class="tool-link">→ Visit Gemini</a>
             </div>
             <div class="tool-card">
-                <div class="category">Research</div>
+                <span class="tool-category">Research</span>
                 <h3>Perplexity AI</h3>
-                <p>Accurate answers with real sources and citations.</p>
-                <a href="https://perplexity.ai" target="_blank" style="color:var(--gold)">Visit →</a>
+                <p>AI search engine with real-time sources and citations. Ideal for accurate research.</p>
+                <a href="https://www.perplexity.ai" target="_blank" class="tool-link">→ Visit Perplexity</a>
             </div>
             <div class="tool-card">
-                <div class="category">Multimodal</div>
-                <h3>Gemini</h3>
-                <p>Strong image understanding and Google integration.</p>
-                <a href="https://gemini.google.com" target="_blank" style="color:var(--gold)">Visit →</a>
-            </div>
-            <div class="tool-card">
-                <div class="category">Conversational</div>
-                <h3>Grok (by xAI)</h3>
-                <p>Fun, real-time, less censored answers with strong reasoning. Great personality.</p>
-                <a href="https://grok.x.ai" target="_blank" style="color:var(--gold)">Visit →</a>
-            </div>
-            <div class="tool-card">
-                <div class="category">Efficient & Open</div>
-                <h3>DeepSeek</h3>
-                <p>Excellent performance with very low cost (or free tiers). Strong in coding and math.</p>
-                <a href="https://deepseek.com" target="_blank" style="color:var(--gold)">Visit →</a>
-            </div>
-            <div class="tool-card">
-                <div class="category">Documents</div>
+                <span class="tool-category">Productivity</span>
                 <h3>NotebookLM</h3>
-                <p>Turn PDFs and notes into summaries, study guides, or podcasts.</p>
-                <a href="https://notebooklm.google" target="_blank" style="color:var(--gold)">Visit →</a>
+                <p>Upload documents and get intelligent summaries, audio overviews, and deep analysis.</p>
+                <a href="https://notebooklm.google" target="_blank" class="tool-link">→ Visit NotebookLM</a>
             </div>
+            <div class="tool-card">
+                <span class="tool-category">Voice</span>
+                <h3>ElevenLabs</h3>
+                <p>Ultra-realistic text-to-speech and voice cloning with a generous free tier.</p>
+                <a href="https://elevenlabs.io" target="_blank" class="tool-link">→ Visit ElevenLabs</a>
+            </div>
+            <!-- Add more cards as needed -->
         </div>
-    </div>
+    </section>
 
     <footer>
-        <p>&copy; 2026 AI Tools Hub • Global AI Resource</p>
+        © 2026 AI Tools Hub — Premium AI Intelligence
     </footer>
 </body>
 </html>
