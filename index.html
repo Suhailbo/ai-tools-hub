@@ -1,134 +1,143 @@
-<<!DOCTYPE html>
+                <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free AI Tools That Actually Work in 2026. Honest reviews, prompts, and guides for beginners, students, and hustlers in Nigeria and worldwide.">
-    <title>AI Tools Hub - Free AI Tools That Actually Work in 2026</title>
+    <meta name="description" content="Discover the best free AI tools that actually deliver results in 2026. Honest reviews, powerful prompts, and practical guides for creators and professionals worldwide.">
+    <title>AI Tools Hub - Best Free AI Tools That Deliver in 2026</title>
     <style>
         :root {
-            --bg: #0f0f12;
-            --card: #1a1a20;
-            --text: #e0e0e0;
-            --accent: #00ff9d;
-            --accent2: #00b8ff;
+            --bg: #0a0a0a;
+            --card: #1a1a1a;
+            --text: #e5e5e5;
+            --gold: #ffd700;
+            --gold-dark: #e6b800;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
             background: var(--bg); 
             color: var(--text); 
-            line-height: 1.6; 
+            line-height: 1.7; 
         }
         header { 
-            background: linear-gradient(135deg, #1a1a20, #0f0f12); 
-            padding: 1.5rem 5%; 
-            border-bottom: 2px solid var(--accent); 
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a); 
+            padding: 1.8rem 5%; 
+            border-bottom: 3px solid var(--gold); 
             position: sticky; 
             top: 0; 
             z-index: 100; 
         }
         nav { 
-            max-width: 1200px; 
+            max-width: 1280px; 
             margin: 0 auto; 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
         }
         .logo { 
-            font-size: 1.8rem; 
-            font-weight: 700; 
-            color: var(--accent); 
+            font-size: 2rem; 
+            font-weight: 800; 
+            color: var(--gold); 
+            letter-spacing: -1px;
         }
         .nav-links a { 
             color: var(--text); 
-            margin-left: 2rem; 
+            margin-left: 2.2rem; 
             text-decoration: none; 
             font-weight: 500; 
+            transition: color 0.3s;
         }
         .nav-links a:hover { 
-            color: var(--accent); 
+            color: var(--gold); 
         }
         .hero { 
-            padding: 4rem 5% 3rem; 
+            padding: 5.5rem 5% 4rem; 
             text-align: center; 
-            background: linear-gradient(rgba(0,255,157,0.05), transparent); 
+            background: linear-gradient(rgba(255,215,0,0.06), transparent); 
         }
         .hero h1 { 
-            font-size: 2.8rem; 
-            margin-bottom: 1rem; 
+            font-size: 3.2rem; 
+            margin-bottom: 1.2rem; 
             color: white; 
+            line-height: 1.1;
         }
         .hero p { 
-            font-size: 1.3rem; 
-            max-width: 700px; 
-            margin: 0 auto 2rem; 
-            opacity: 0.9; 
+            font-size: 1.35rem; 
+            max-width: 780px; 
+            margin: 0 auto 2.5rem; 
+            opacity: 0.88; 
         }
         .cta-btn { 
-            background: var(--accent); 
+            background: var(--gold); 
             color: #000; 
-            padding: 14px 32px; 
+            padding: 16px 38px; 
             border: none; 
             border-radius: 50px; 
-            font-size: 1.1rem; 
-            font-weight: 600; 
+            font-size: 1.15rem; 
+            font-weight: 700; 
             cursor: pointer; 
             text-decoration: none; 
             display: inline-block; 
+            transition: all 0.3s;
+        }
+        .cta-btn:hover {
+            background: var(--gold-dark);
+            transform: translateY(-3px);
         }
         .tools-section { 
-            padding: 3rem 5%; 
-            max-width: 1200px; 
+            padding: 4rem 5%; 
+            max-width: 1280px; 
             margin: 0 auto; 
         }
         .section-title { 
             text-align: center; 
-            font-size: 2rem; 
-            margin-bottom: 2.5rem; 
-            color: var(--accent); 
+            font-size: 2.3rem; 
+            margin-bottom: 3rem; 
+            color: var(--gold); 
         }
         .tools-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 1.5rem; 
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+            gap: 1.8rem; 
         }
         .tool-card { 
             background: var(--card); 
-            border-radius: 16px; 
-            padding: 1.8rem; 
+            border-radius: 18px; 
+            padding: 2rem; 
             border: 1px solid #333; 
-            transition: all 0.3s ease; 
+            transition: all 0.4s ease; 
         }
         .tool-card:hover { 
-            transform: translateY(-8px); 
-            border-color: var(--accent); 
-            box-shadow: 0 10px 30px rgba(0, 255, 157, 0.15); 
+            transform: translateY(-10px); 
+            border-color: var(--gold); 
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.12); 
         }
         .tool-card h3 { 
-            color: var(--accent2); 
-            margin-bottom: 0.8rem; 
-            font-size: 1.4rem; 
+            color: var(--gold); 
+            margin-bottom: 0.9rem; 
+            font-size: 1.45rem; 
         }
         .category { 
             display: inline-block; 
-            background: rgba(0, 255, 157, 0.1); 
-            color: var(--accent); 
-            padding: 4px 12px; 
-            border-radius: 20px; 
-            font-size: 0.85rem; 
-            margin-bottom: 1rem; 
+            background: rgba(255,215,0,0.12); 
+            color: var(--gold); 
+            padding: 6px 16px; 
+            border-radius: 30px; 
+            font-size: 0.88rem; 
+            font-weight: 500; 
+            margin-bottom: 1.2rem; 
         }
         footer { 
-            background: #0a0a0c; 
-            padding: 3rem 5% 2rem; 
+            background: #050505; 
+            padding: 3.5rem 5% 2.5rem; 
             text-align: center; 
-            margin-top: 4rem; 
+            margin-top: 5rem; 
             border-top: 1px solid #333; 
         }
         @media (max-width: 768px) { 
-            .hero h1 { font-size: 2.2rem; } 
-            .nav-links a { margin-left: 1rem; font-size: 0.95rem; } 
+            .hero h1 { font-size: 2.4rem; } 
+            .nav-links a { margin-left: 1.2rem; font-size: 0.98rem; } 
         }
     </style>
 </head>
@@ -146,50 +155,44 @@
     </header>
 
     <section class="hero">
-        <h1>Free AI Tools That Actually Work in 2026</h1>
-        <p>Yo, I test these tools so you don't waste time. Simple, honest reviews and prompts for beginners, students, and hustlers — whether you're in Ibadan, Lagos, or anywhere else.</p>
-        <a href="#tools" class="cta-btn">Browse Free Tools Now</a>
+        <h1>Free AI Tools That Actually Deliver in 2026</h1>
+        <p>Premium curation of the best free AI tools. Honest reviews, powerful prompts, and practical guides for creators, professionals, and ambitious users worldwide.</p>
+        <a href="#tools" class="cta-btn">Explore Premium Tools</a>
     </section>
 
     <section id="tools" class="tools-section">
-        <h2 class="section-title">Featured AI Tools This Week (March 2026)</h2>
+        <h2 class="section-title">Featured AI Tools • March 2026</h2>
         <div class="tools-grid">
             <div class="tool-card">
-                <div class="category">Writing & Reasoning</div>
+                <div class="category">Advanced Reasoning</div>
                 <h3>Claude 3.5 Sonnet</h3>
-                <p>Best for long-form writing, detailed plans, and strong instruction following. Excellent for content creation and analysis.</p>
-                <a href="https://claude.ai" target="_blank" style="color: var(--accent); text-decoration: none;">Try Claude →</a>
+                <p>Leading model for complex writing, deep analysis, and step-by-step problem solving.</p>
+                <a href="https://claude.ai" target="_blank" style="color: var(--gold); text-decoration: none; font-weight: 500;">Try Claude →</a>
             </div>
             <div class="tool-card">
-                <div class="category">All-Rounder</div>
+                <div class="category">Versatile All-Rounder</div>
                 <h3>ChatGPT (GPT-4o)</h3>
-                <p>Versatile for everyday tasks, voice mode, research, and image generation. Great free tier.</p>
-                <a href="https://chat.openai.com" target="_blank" style="color: var(--accent); text-decoration: none;">Try ChatGPT →</a>
+                <p>Powerful for research, content creation, voice, and image generation.</p>
+                <a href="https://chat.openai.com" target="_blank" style="color: var(--gold); text-decoration: none; font-weight: 500;">Try ChatGPT →</a>
             </div>
             <div class="tool-card">
-                <div class="category">Research with Sources</div>
+                <div class="category">Research & Citations</div>
                 <h3>Perplexity AI</h3>
-                <p>Answers questions with real citations and sources. Perfect for accurate research.</p>
-                <a href="https://perplexity.ai" target="_blank" style="color: var(--accent); text-decoration: none;">Try Perplexity →</a>
+                <p>Accurate answers backed by real sources. Ideal for serious research.</p>
+                <a href="https://perplexity.ai" target="_blank" style="color: var(--gold); text-decoration: none; font-weight: 500;">Try Perplexity →</a>
             </div>
             <div class="tool-card">
-                <div class="category">Google Ecosystem</div>
+                <div class="category">Multimodal Power</div>
                 <h3>Gemini</h3>
-                <p>Strong with images, research, and integration with Google apps. Good multimodal capabilities.</p>
-                <a href="https://gemini.google.com" target="_blank" style="color: var(--accent); text-decoration: none;">Try Gemini →</a>
-            </div>
-            <div class="tool-card">
-                <div class="category">Document Analysis</div>
-                <h3>NotebookLM</h3>
-                <p>Upload PDFs/notes and get summaries, study guides, or even podcasts. Zero hallucinations.</p>
-                <a href="https://notebooklm.google" target="_blank" style="color: var(--accent); text-decoration: none;">Try NotebookLM →</a>
+                <p>Excellent image understanding and Google ecosystem integration.</p>
+                <a href="https://gemini.google.com" target="_blank" style="color: var(--gold); text-decoration: none; font-weight: 500;">Try Gemini →</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 AI Tools Hub • Honest reviews for real hustlers in Nigeria and beyond</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">Built to help you work smarter with free AI tools</p>
+        <p>&copy; 2026 AI Tools Hub • Curated with precision for global users</p>
+        <p style="margin-top: 1rem; font-size: 0.95rem; opacity: 0.75;">Premium selection of free AI tools that deliver real results</p>
     </footer>
 </body>
 </html>
