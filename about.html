@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About — AI Tools Hub 2026</title>
     <style>
-        /* Same base styles as reviews.html */
         :root { --bg: #0a0a0a; --card: #141414; --text: #f0f0f0; --gold: #d4af37; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
@@ -15,14 +14,14 @@
         .background::after { width: 1200px; height: 1200px; animation-duration: 220s; animation-direction: reverse; }
         @keyframes rotateCircle { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
         header { background: rgba(10,10,10,0.95); padding: 2rem 6%; border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); }
-        nav { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        nav { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
         .logo { display: flex; align-items: center; gap: 14px; font-size: 2.35rem; font-weight: 700; color: var(--gold); letter-spacing: -1.2px; text-decoration: none; }
         .logo-dot { width: 12px; height: 12px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 15px var(--gold); }
-        .nav-links a { color: var(--text); margin-left: 2.8rem; text-decoration: none; font-weight: 500; font-size: 1.05rem; transition: color 0.3s ease; }
+        .nav-links a { color: var(--text); margin-left: 2rem; text-decoration: none; font-weight: 500; font-size: 1.05rem; transition: color 0.3s ease; }
         .nav-links a:hover { color: var(--gold); }
         .section { padding: 6rem 6%; max-width: 1400px; margin: 0 auto; }
         .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 4rem; color: var(--gold); font-weight: 600; }
-        .about-content { background: var(--card); padding: 3rem; border-radius: 12px; max-width: 800px; margin: 0 auto; line-height: 1.9; }
+        .about-content { background: var(--card); padding: 3.5rem; border-radius: 12px; max-width: 900px; margin: 0 auto; line-height: 1.9; }
         footer { text-align: center; padding: 3rem 6%; opacity: 0.7; font-size: 0.95rem; }
     </style>
 </head>
@@ -43,8 +42,9 @@
     <section class="section">
         <h2 class="section-title">About AI Tools Hub</h2>
         <div class="about-content">
-            <p>We curate only the highest-quality free and freemium AI tools available in 2026. No hype — just honest analysis and recommendations for power users, professionals, and discerning creators who demand excellence.</p>
-            <p style="margin-top: 2rem;">Our picks are tested regularly. We focus on real value, usability, and results.</p>
+            <p>We are a premium curation platform focused exclusively on the highest-quality free and freemium AI tools available in 2026. No sponsored hype — only honest testing and recommendations for power users, professionals, and creators who value excellence and real results.</p>
+            <p style="margin-top: 2rem;">Our picks are regularly updated based on performance, usability, and value. This site is built as a clean, spacious resource — not another overwhelming list.</p>
+            <p style="margin-top: 2rem; opacity: 0.8;">Last updated: March 2026</p>
         </div>
     </section>
 
