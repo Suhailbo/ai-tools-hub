@@ -30,12 +30,9 @@
         /* Circular Rotating Background */
         .background {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1;
-            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+            background: radial-gradient(circle at center, rgba(212,175,55,0.06) 0%, transparent 70%);
             overflow: hidden;
             pointer-events: none;
         }
@@ -44,9 +41,8 @@
         .background::after {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            border: 1px solid rgba(212, 175, 55, 0.12);
+            top: 50%; left: 50%;
+            border: 1px solid rgba(212,175,55,0.12);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             animation: rotateCircle 140s linear infinite;
@@ -175,8 +171,104 @@
             font-weight: 600;
         }
 
-        /* You can continue adding .tools-grid, .tool-card, etc. here */
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
 
+        .tool-card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 1.8rem;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(212,175,55,0.1);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 30px rgba(212,175,55,0.2);
+            border-color: var(--gold);
+        }
+
+        .tool-card h3 {
+            color: var(--gold);
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .tool-category {
+            display: inline-block;
+            background: rgba(212,175,55,0.15);
+            color: var(--gold);
+            font-size: 0.85rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .tool-card p {
+            opacity: 0.85;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .tool-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .tool-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Categories */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .category-card {
+            background: var(--card);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            background: #1f1f1f;
+            transform: scale(1.03);
+        }
+
+        .category-card h3 {
+            color: var(--gold);
+            margin-top: 1rem;
+        }
+
+        /* Reviews & About */
+        .review-card, .about-content {
+            background: var(--card);
+            padding: 2.5rem;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 6%;
+            opacity: 0.7;
+            font-size: 0.95rem;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body>
@@ -201,11 +293,111 @@
 
     <section class="hero">
         <h1>Premium AI Intelligence <span style="color: var(--gold);">2026</span></h1>
-        <p>Curated collection of the world's finest free AI tools. Sophisticated reviews for discerning users.</p>
+        <p>Curated collection of the world's finest free & premium AI tools.<br>Sophisticated reviews for discerning users.</p>
         <a href="#tools" class="cta-btn">Explore Tools</a>
     </section>
 
-    <!-- You can continue adding more sections here -->
+    <!-- Tools Section -->
+    <section id="tools" class="section">
+        <h2 class="section-title">Featured AI Tools</h2>
+        <div class="tools-grid">
+            
+            <div class="tool-card">
+                <span class="tool-category">Chatbot</span>
+                <h3>Claude</h3>
+                <p>Best for long-form writing, deep reasoning, and complex task automation. Excellent instruction following.</p>
+                <a href="https://claude.ai" target="_blank" class="tool-link">→ Visit Claude</a>
+            </div>
+
+            <div class="tool-card">
+                <span class="tool-category">Chatbot</span>
+                <h3>Google Gemini</h3>
+                <p>Multimodal powerhouse with strong integration into Google ecosystem. Great for research and image analysis.</p>
+                <a href="https://gemini.google.com" target="_blank" class="tool-link">→ Visit Gemini</a>
+            </div>
+
+            <div class="tool-card">
+                <span class="tool-category">Chatbot</span>
+                <h3>ChatGPT</h3>
+                <p>Versatile everyday assistant. Excellent for casual use, voice mode, and broad creative tasks.</p>
+                <a href="https://chat.openai.com" target="_blank" class="tool-link">→ Visit ChatGPT</a>
+            </div>
+
+            <div class="tool-card">
+                <span class="tool-category">Research</span>
+                <h3>Perplexity AI</h3>
+                <p>AI-powered search engine that provides accurate answers with real-time sources and citations.</p>
+                <a href="https://www.perplexity.ai" target="_blank" class="tool-link">→ Visit Perplexity</a>
+            </div>
+
+            <div class="tool-card">
+                <span class="tool-category">Productivity</span>
+                <h3>NotebookLM</h3>
+                <p>Google's intelligent note assistant. Upload documents and get summaries, podcasts, and deep analysis.</p>
+                <a href="https://notebooklm.google" target="_blank" class="tool-link">→ Visit NotebookLM</a>
+            </div>
+
+            <div class="tool-card">
+                <span class="tool-category">Voice</span>
+                <h3>ElevenLabs</h3>
+                <p>Industry-leading text-to-speech and voice cloning with highly realistic voices (generous free tier).</p>
+                <a href="https://elevenlabs.io" target="_blank" class="tool-link">→ Visit ElevenLabs</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="section" style="background: #0f0f0f;">
+        <h2 class="section-title">Browse by Category</h2>
+        <div class="categories-grid">
+            <div class="category-card">
+                <h3>Chatbots & Assistants</h3>
+                <p>Conversational AI for writing, research, and daily tasks</p>
+            </div>
+            <div class="category-card">
+                <h3>Image & Video Generation</h3>
+                <p>Text-to-image, video, and creative visual tools</p>
+            </div>
+            <div class="category-card">
+                <h3>Coding & Development</h3>
+                <p>AI pair programmers and code assistants</p>
+            </div>
+            <div class="category-card">
+                <h3>Productivity & Research</h3>
+                <p>Note-taking, summarization, and knowledge tools</p>
+            </div>
+            <div class="category-card">
+                <h3>Audio & Voice</h3>
+                <p>Speech synthesis, cloning, and music generation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section">
+        <h2 class="section-title">Premium Reviews</h2>
+        <div class="review-card">
+            <h3 style="color: var(--gold); margin-bottom: 1rem;">Claude vs Gemini vs ChatGPT — 2026 Edition</h3>
+            <p><strong>Winner for Writing:</strong> Claude — unmatched depth and nuance.<br>
+               <strong>Winner for Research:</strong> Perplexity + Gemini combo.<br>
+               <strong>Best All-Rounder:</strong> ChatGPT for its ecosystem and speed.</p>
+            <p style="margin-top: 1.5rem; opacity: 0.8;">We test every major model monthly for reasoning, creativity, speed, and value. Our goal: help you choose the right tool without wasting time.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section" style="background: #0f0f0f;">
+        <h2 class="section-title">About AI Tools Hub</h2>
+        <div class="about-content">
+            <p>We are a premium curation platform dedicated to discovering and reviewing the highest-quality AI tools available in 2026. Our focus is on free and freemium tools that deliver real value — no hype, just sophisticated, honest analysis for power users and discerning professionals.</p>
+            <p style="margin-top: 1.5rem;">Curated with care • Updated regularly • Built for those who demand excellence.</p>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 AI Tools Hub — Premium AI Intelligence
+    </footer>
 
 </body>
 </html>
